@@ -1,12 +1,16 @@
 const express=require('express')
-
+const cors=require('cors')
 const app=express();
 app.use(express.json())
 const users=[]
 const jwt=require("jsonwebtoken")
 
-const JWT_SECRET=""
+const JWT_SECRET="xjxjxjxj1"
+//frontend code(cors)
 
+app.get("/",function(req,res){
+    res.sendFile(__dirname+"/public/index.html")
+})
 
 app.post("/signup",function(req,res){
     const username=req.body.username;
